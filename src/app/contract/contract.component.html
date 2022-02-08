@@ -1,0 +1,101 @@
+
+    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+        <div class="flex justify-between items-center space-x-5" >
+            <!--Connect to wallet-->
+         
+            <!-- <button (click)="loadContract()">load contract</button> -->
+    
+            <!--Connect to wallet-->
+           
+            <button class="w-10 h-10 hover:" (click)="connectWallet()">
+              <img src="../../assets/metamask.svg" alt="">
+            </button>
+          </div>
+      <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap d-none d-sm-none d-sm-block">
+          <small><a class="nav-link" href="#"><span id="account"></span></a></small>
+        </li>
+      </ul>
+    </nav>
+    <div class="mt-24 content-center ml-64 w-7/12 mb-0">
+      <h1 class="mb-7 text-4xl font-bold text-center">Create Contract</h1>
+      <div class="container-fluid">
+        <div class="row">
+          <main role="main" class="col-lg-12 d-flex justify-content-center">
+           
+            <div id="content">
+              <form name="product"
+              (ngSubmit)="onSubmit()"
+              #f="ngForm">
+        <div class="mb-3">
+          <label class="label">
+            <span class="label-text">type immoblier</span>
+          </label>
+          <input id="newTask" type="text" class="input input-bordered" [(ngModel)]="product.tasktype_immoblier" name="tasktype_immoblier"
+         
+          #tasktype_immoblier="ngModel" placeholder="Add type..." required>
+         </div>
+        <div class="mb-3">
+          <label class="label">
+            <span class="label-text">Buyer</span>
+          </label>
+          <input id="newTask1" type="text" class="form-control" [(ngModel)]="product.taskbuyer" name="taskbuyer"
+         
+          #taskbuyer="ngModel" placeholder="Add buyer..." required>
+        </div>
+        <div class="mb-3">
+          <label class="label">
+            <span class="label-text">Seller</span>
+          </label>
+          <input id="newTask2" type="text" class="form-control" [(ngModel)]="product.taskseller" name="taskseller"
+          
+          #taskseller="ngModel" placeholder="Add seller..." required>
+        </div>
+        <div class="mb-3">
+          <label class="label">
+            <span class="label-text">Price</span>
+          </label>
+          <input id="newTask3" type="text" class="form-control" [(ngModel)]="product.tasprice" name="tasprice"
+          
+          #tasprice="ngModel" placeholder="Add price..." required>
+        </div>
+     
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">valider</label>
+        </div>
+        <button type="submit" class="btn btn-primary" (click)="createTask()">Submit</button>
+        <button type="button" class="btn btn-primary" (click)="getAllTasks()">Get</button>
+      </form>
+          <div class="row">
+       <div  class="col-2"><h3>ID</h3></div>
+       <div  class="col-2"><h3>TYPE</h3></div>
+       <div  class="col-2"><h3>SELLER</h3></div>
+       <div  class="col-2"><h3>BUYER</h3></div>
+       <div  class="col-2"><h3>PRICE</h3></div>
+       <div  class="col-2"><h3>DATE</h3></div>
+
+        </div>
+<!-- Tasks List -->
+<div id="taskList" class="list-unstyled" >
+  <div class="taskTemplate" class="checkbox" style="display: none">
+
+ <div class="card">
+  <div class="row">
+    <div class="col-sm-12">
+    </div><!--./col-sm-12-->
+  </div><!--./row-->
+  <div class="row">
+    <div class="col-sm-12">
+     
+    </div>
+ </div>
+</div>
+</div>
+</div>
+          </div>
+        </main>
+        </div>
+      </div>
+    </div>
+    

@@ -1,0 +1,169 @@
+
+<button type="button" (click)='movetolistcontract()' class="btn btn-primary float-end m-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+
+>
+   Contract List
+</button>
+<button type="button" (click)='movetohome()' class="btn btn-primary float-end m-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+
+>
+  Home
+</button>
+<section class="get-in-touch">
+<h3>Create Contract</h3>
+<div [hidden]="submitted" style="width: 400px;">
+  <form class="contact-form row">
+    <div class="form-group" class="form-field col-lg-6">
+      <label for="name" >Numero de Contract</label>
+      <input type="text" class="form-control" id="numero" required [(ngModel)]="contract.id" name="numero">
+    </div>
+    <div class="form-group" class="form-field col-lg-6">
+      <label for="name" >Type</label>
+    <select class="form-select" aria-label="Default select example" required [(ngModel)]="contract.type" name="type">
+      <option selected>Open this select menu</option>
+      <option value="1">Borrow</option>
+      <option value="2">Sell</option>
+    </select>
+</div>
+<div class="form-group" class="form-field col-lg-6">
+  <label for="name">Seller</label>
+  <input type="text" class="form-control" id="seller" required [(ngModel)]="contract.seller" name="seller">
+</div>
+<div class="form-group" class="form-field col-lg-6">
+  <label for="name" >Buyer</label>
+  <input type="text" class="form-control" id="buyer" required [(ngModel)]="contract.buyer" name="buyer">
+</div>
+
+    <div class="form-group" class="form-field col-lg-12">
+      <label for="name">Date</label>
+      <input type="text" class="form-control" id="date" required [(ngModel)]="contract.date" name="date">
+    </div>
+
+    <div class="form-group" class="form-field col-lg-12">
+      <label for="name">Price</label>
+    </div>
+    <div class="input-group">
+      <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" required [(ngModel)]="contract.price" name="price">
+      <span class="input-group-text">DH</span>
+      <span class="input-group-text">0.00</span>
+    </div>
+   
+    <div class="form-group" class="form-field col-lg-6">
+      <label for="name" >Property</label>
+      <input type="text" class="form-control" id="proprety" required [(ngModel)]="contract.proprety" name="proprety">
+    </div>
+    <div class="form-group" class="form-field col-lg-6">
+      <label for="name" >Taxe</label>
+      <input type="text" class="form-control" id="taxe" required [(ngModel)]="contract.taxe" name="taxe">
+    </div>
+    <div class="form-field col-lg-12">
+    <button class="btn btn-success" type="submit" (click)="onSubmit()">Submit</button>
+    </div>
+  </form>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+<app-navbar></app-navbar>
+
+<div class="container">
+<button type="button" class="btn btn-primary float-end m-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+
+>
+  Add Contract
+</button>
+<table class="table table-striped">
+    <thead>
+      <th>Id</th>
+      <th>Contract Type</th>
+      <th>Date</th>
+      <th>Price</th>
+      <th>Seller</th>
+      <th>Buyer</th>
+      <th>Property</th>
+      <th>Taxe</th>
+    </thead>
+  </table>
+  </div> -->
+<!-- <table mat-table class="mat-elevation-z8">
+
+  <ng-container matColumnDef="position">
+    <th mat-header-cell *matHeaderCellDef> Id </th>
+    <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+  </ng-container>
+
+  
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef>First Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+  </ng-container>
+
+  
+  <ng-container matColumnDef="weight">
+    <th mat-header-cell *matHeaderCellDef> Last Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+  </ng-container>
+
+  
+  <ng-container matColumnDef="symbol">
+    <th mat-header-cell *matHeaderCellDef> Address </th>
+    <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+  </ng-container>
+  <ng-container matColumnDef="codePostal">
+    <th mat-header-cell *matHeaderCellDef> Code Postal </th>
+    <td mat-cell *matCellDef="let element"> {{element.codePostal}} </td>
+  </ng-container>
+  <ng-container matColumnDef="phoneNumber">
+    <th mat-header-cell *matHeaderCellDef> Phone Number </th>
+    <td mat-cell *matCellDef="let element"> {{element.phoneNumber}} </td>
+  </ng-container>
+  <ng-container matColumnDef="action">
+    <th mat-header-cell *matHeaderCellDef> Action </th>
+    <td mat-cell *matCellDef="let element"> 
+      <button class="btn btn-outline-primary me-2 mb-1"
+      data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+          <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+          <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+        </svg>
+      </button>
+      <button class="btn btn-outline-danger me-2 mb-1"
+      
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+          <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+          <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+        </svg>
+      </button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row ></tr>
+  <tr mat-row ></tr>
+</table>
+
+<mat-paginator [pageSizeOptions]="[4, 8, 20]"
+showFirstLastButtons 
+#paginator
+aria-label="Select page of periodic elements">
+</mat-paginator> -->
+
+

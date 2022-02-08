@@ -1,0 +1,102 @@
+
+  .headerLogo{
+	font-family: 'Lobster', cursive;
+	font-size: 4rem;
+	margin-left: 20px;
+	color: white;
+	text-shadow: 2px 2px rgba(0, 0, 0, 0.5);
+	font-size: 2rem;
+	 cursor: pointer;
+}
+
+
+header:before {
+	background-color: rgba(0, 0, 0, 0.1);
+	content: '';
+	filter: blur(25px);
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+
+header {
+ 
+	align-items: center;
+	background-image: var(--gradient-header);	
+	display: flex;
+	justify-content: center;
+	left: 0;
+	padding: 1rem;
+	position: fixed;
+	top: 0;
+	width: 100%;
+}
+
+nav {
+	width: 100%;
+	
+}
+
+ul {
+	list-style: none;
+	display: flex;
+}
+
+li {
+	display: flex;
+}
+
+li a:before {
+	left: 0;
+}
+
+li a:before,
+li a:after {
+	background-color: #dadada;
+	border-radius: 0 10px 0 10px;
+	bottom: 0;
+	content: '';
+	position: absolute;
+	height: 3px;
+	transition: width 0.5s ease-in-out;
+	width: 0;
+	z-index: -1;
+}
+
+li a:after {
+	right: 0;
+}
+
+li a:hover:before,
+li a:focus:before,
+li a:active:before,
+li a:hover:after,
+li a:focus:after,
+li a:active:after {
+	width: 55%;
+}
+
+li a {
+	background-color: rgba(4, 10, 24, 0.4);
+	border-radius: 0 10px 0 10px;
+	color: #ffffff;
+	cursor: pointer;
+	font: 400 1.5rem 'Dancing Script', sans-serif;
+	margin: 0 10px;
+	overflow: hidden;
+	padding: 0.5rem 1rem;
+	position: relative;
+	transition: text-shadow 0.25s 0.5s ease-in-out;
+	text-decoration: none;
+	text-shadow: 0 0 10px #000000;
+	z-index: 2;
+}
+
+li a:hover,
+li a:focus,
+li a:active {
+	text-shadow: 0 0 5px rgba(0, 130, 200, 0.9);
+	transition: text-shadow 0.5s 0.25s ease-in-out;
+}
